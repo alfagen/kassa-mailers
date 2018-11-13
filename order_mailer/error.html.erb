@@ -1,0 +1,31 @@
+<div style="cursor:auto;color:#000;font-family:Arial, sans-serif;font-size:16px;line-height:1;">
+  <h1><%= I18n.t('emails.change_ticket.error_title') %></h1>
+  <p style="color: #000;">
+    <%= I18n.t('emails.new_tickets.create_order', order_id: @order.public_id).html_safe %>
+    <br/>
+    <br/>
+    <%= I18n.t('emails.change_ticket.error_status') %>
+    <br/>
+    <%= I18n.t('emails.common.reason') %>&nbsp;
+    <strong style="background: #ecf0f6; display: inline-block; padding: 2px;">
+      «<%= @order.text %>»
+    </strong>
+    <br/>
+  </p>
+  <table cellpadding="0" cellspacing="0" align="left" border="0">
+    <tbody>
+      <tr>
+        <td style="border-radius:8px;color:#1c1c1c;cursor:auto;padding:16px 32px;"
+          align="center" valign="middle" bgcolor="#ffd828">
+          <a
+            href="http://kassa.cc"
+            style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:#1c1c1c;font-family:Arial, sans-serif;font-size:19px;font-weight:bold;margin:0px;"
+            target="_blank"
+          >
+            <%= I18n.t('emails.common.contact_operator') %>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

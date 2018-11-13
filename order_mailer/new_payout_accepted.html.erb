@@ -1,0 +1,69 @@
+<div style="cursor:auto;color:#000;font-family:Arial, sans-serif;font-size:16px;line-height:1;">
+  <h1><%= I18n.t('emails.new_tickets.title') %></h1>
+  <p style="color: #000;"><%= I18n.t('emails.common.hello', nickname: @order.user.nickname).html_safe %></p>
+  <p style="color: #000;">
+    <%= I18n.t('emails.new_tickets.create_output_order', order_id: @order.public_id).html_safe %>
+    <br/>
+    <br/>
+    <%= I18n.t('emails.new_tickets.output_accepted').html_safe %>
+  </p>
+  <br/>
+  <div
+    style="background: #ecf0f6; display: inline-block; padding: 20px 0 20px 20px;width:96%;border-radius:5px">
+    <table border="0">
+      <tr>
+        <td width="250"><b><%= I18n.t('emails.new_tickets.info_ticket') %></b>
+          <br/>
+          <br/>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= I18n.t('emails.new_tickets.number_ticket') %></td>
+        <td><%= @order.public_id %></td>
+      </tr>
+      <tr>
+        <td><%= I18n.t('emails.new_tickets.payment_system_name') %></td>
+        <td><%= @order.outcome_payment_system.name %></td>
+      </tr>
+      <tr>
+        <td>
+          <br/>
+          <%= I18n.t('emails.new_tickets.outcome_account') %>
+        </td>
+        <td>
+          <br/>
+          <%= @order.outcome_account %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= I18n.t('emails.new_tickets.outcome_amount') %></td>
+        <td><%= @order.outcome_money.format(symbol: @order.outcome_money.currency.to_s, symbol_position: :after) %></td>
+      </tr>
+      <tr>
+        <td>
+          <br/>
+          <%= I18n.t('emails.new_tickets.create_at') %>
+        </td>
+        <td>
+          <br/>
+          <%= I18n.l(Time.zone.now, format: '%H:%M %-d %B %Y') %>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br/>
+  <br/>
+  <table cellpadding="0" cellspacing="0" align="left" border="0">
+    <tbody>
+      <tr>
+        <td style="border-radius:8px;color:#1c1c1c;cursor:auto;padding:16px 32px;"
+          align="center" valign="middle" bgcolor="#ffd828">
+          <a href="http://kassa.cc/orders"
+            style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:#1c1c1c;font-family:Arial, sans-serif;font-size:19px;font-weight:bold;margin:0px;"
+            target="_blank"><%= I18n.t('emails.common.goto_lk') %></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

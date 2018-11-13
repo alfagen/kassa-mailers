@@ -1,0 +1,60 @@
+<div style="cursor:auto;color:#000000;font-family:Arial, sans-serif;font-size:16px;line-height:1;">
+  <h1><%= I18n.t('emails.activation.title') %></h1>
+  <p style="color: #000;"><%= I18n.t('emails.common.hello', nickname: @user.name).html_safe %><br><br>
+    <%= I18n.t('emails.activation.signup_success') %>
+  </p>
+  <br>
+  <div style="background: #ecf0f6; display: inline-block; padding: 0 20px;width:93%;border-radius:5px">
+    <p style="color: #000;">
+      <b><%= I18n.t('emails.activation.access') %></b><br><br>
+      <%= I18n.t('emails.activation.login_email') %></b>.<br>
+      <%= I18n.t('emails.activation.change_password') %>
+    </p>
+  </div>
+  <br>
+  <p style="color: #000;">
+    <br> <%= I18n.t('emails.activation.full_access') %>
+  </p>
+  <p style="color: #000;">
+  <table style="line-height:1.3" border="0">
+    <tr>
+      <td width="30">
+        <img src="http://kassa.cc/images/icon-signup-ok.png" style="height:20px; width: 20px;">
+      </td>
+      <td> <%= I18n.t('emails.activation.tracking_orders') %><br></td>
+    <tr>
+    <tr>
+      <td width="30">
+        <img src="http://kassa.cc/images/icon-signup-ok.png" style="height:20px; width: 20px;">
+      </td>
+      <td> <%= I18n.t('emails.activation.ref_programm') %><br></td>
+    <tr>
+    <tr>
+      <td width="30">
+        <img src="http://kassa.cc/images/icon-signup-ok.png" style="height:20px; width: 20px;">
+      </td>
+      <td> <%= I18n.t('emails.activation.promo') %><br></td>
+    <tr>
+  </table>
+  </p>
+  <p style="padding-bottom:8px;">
+    <%= I18n.t('emails.activation.goto_link') %><br>
+  </p>
+  <table cellpadding="0" cellspacing="0" align="left" border="0">
+    <tbody>
+      <tr>
+        <td style="border-radius:8px;color:#1c1c1c;cursor:auto;padding:16px 32px;" align="center" valign="middle" bgcolor="#ffd828">
+          <a href="<%= @activation_url %>" style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:#1c1c1c;font-family:Arial, sans-serif;font-size:19px;font-weight:bold;margin:0px;" target="_blank"><%= I18n.t('emails.activation.button') %></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="clear: both;">
+    <br>
+    <%= I18n.t('emails.common.support').html_safe %>
+  </p>
+  <br>
+  <p style="color: #000;">
+    <%= I18n.t('emails.common.postscript').html_safe %>
+  </p>
+</div>
