@@ -41,7 +41,7 @@
       <% end %>
       <tr>
         <td><%= I18n.t('emails.new_tickets.income_amount') %></td>
-        <td><%= @order.income_money.format(symbol: @order.income_money.currency.to_s, symbol_position: :after) %></td>
+        <td><%= @order.income_money.format(symbol: @order.income_money.currency.to_s, format: '%n %u') %></td>
       <tr>
       <% if @order.outcome_account.present? %>
         <tr>
@@ -57,7 +57,7 @@
       <% end %>
       <tr>
         <td><%= I18n.t('emails.new_tickets.outcome_amount') %></td>
-        <td><%= @order.outcome_money.format(symbol: @order.outcome_money.currency.to_s, symbol_position: :after) %></td>
+        <td><%= @order.outcome_money.format(symbol: @order.outcome_money.currency.to_s, format: '%n %u') %></td>
       </tr>
       <% if @order.outcome_fio.present? %>
         <tr>
