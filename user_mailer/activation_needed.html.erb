@@ -8,7 +8,11 @@
     <p style="color: #000;">
       <b><%= I18n.t('emails.activation.access') %></b><br><br>
       <%= I18n.t('emails.activation.login_email') %></b>.<br>
-      <%= I18n.t('emails.activation.change_password') %>
+      <% if @user.reset_password_token.present? %>
+        <%= link_to(I18n.t('emails.activation.change_password_link'), edit_password_url(@user.reset_password_token)) %>
+      <% else %>
+        <%= I18n.t('emails.activation.change_password') %>
+      <% end %>
     </p>
   </div>
   <br>
