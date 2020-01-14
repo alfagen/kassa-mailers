@@ -9,7 +9,11 @@
     <%= I18n.t('emails.new_tickets.title', order_id: @order.public_id) %>
     <br/>
     <br/>
-    <%= I18n.t('emails.new_tickets.accepted').html_safe %>
+    <% if @order.hold? %>
+      <%= I18n.t('emails.new_tickets.hold').html_safe %>
+    <% else %>
+      <%= I18n.t('emails.new_tickets.accepted').html_safe %>
+    <% end %>
   </p>
   <br/>
   <div
