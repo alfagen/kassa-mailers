@@ -1,126 +1,170 @@
-<div style="cursor:auto;color:#000;font-family:Arial, sans-serif;font-size:16px;line-height:1;">
-    <h1><%= I18n.t('emails.change_ticket.done_title') %></h1>
-    <p style="color: #000;">
-      <%= I18n.t('emails.change_ticket.done_status', order_id: @order.public_id).html_safe %>
-    </p>
-    <p style="color: #000;">
-      <%= I18n.t('emails.change_ticket.done_feedback').html_safe %>
-    </p>
-    <div
-      style="background: #f6faff; display: inline-block; padding-left: 20px;width:96%;border-radius:5px">
-      <p style="color: #000;">
-        <table style="line-height:1.3; vertical-align: top;" border="0" width="100%">
-          <tr>
-            <td width="50%" style="line-height:1.3; vertical-align: top;">
-              <p style="color: #000;"><b><%= I18n.t('emails.change_ticket.done_sites') %></b></p>
-              <table style="line-height:1.3" border="0">
-                <tr>
-                  <td width="30">
-                    <img src="http://favicon.yandex.net/favicon/bestchange.ru" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://bestchange.net/kassa-exchanger.html" target="_blank">bestchange.ru</a>
-                    <br>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="30">
-                    <img src="http://bits.media/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://forum.bits.media/index.php?/topic/27575-kassacc-edinyi-obmen-valiut/" target="_blank">bits.media.ru</a>
-                    <br>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="30">
-                    <img src="https://kurs.expert/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://kurs.expert/ru/obmennik/kassa-cc/feedbacks.html" target="_blank">kurs.expert</a>
-                    <br>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="30">
-                    <img src="https://xrates.ru/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://xrates.ru/testimonials/379/p1" target="_blank">xrates.ru</a>
-                    <br>
-                  </td>
-                </tr>  
-                <tr>
-                  <td width="30">
-                    <img src="https://exchangesumo.com/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://exchangesumo.com/exchanger/584/Kassa/" target="_blank">exchangesumo.com</a>
-                    <br>
-                  </td>
-                </tr>  
-                <tr>
-                  <td width="30">
-                    <img src="https://superobmen.org/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://superobmen.org/monitoring-obmennikov/?details=297" target="_blank">superobmen.org</a>
-                    <br>
-                  </td>
-                </tr> 
-                <tr>
-                  <td width="30">
-                    <img src="https://bestexchangers.ru/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://bestexchangers.ru/detail.php?xobmen=553" target="_blank">bestexchangers.ru</a>
-                    <br>
-                  </td>
-                </tr> 
-                <tr>
-                  <td width="30">
-                    <img src="http://mmgp.ru/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="http://mmgp.ru/showthread.php?t=458503&page=1#post11133201" target="_blank">mmgp.ru</a>
-                    <br>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="30">
-                    <img src="https://bitcointalk.org/favicon.ico" style="height:20px; width: 20px;">
-                  </td>
-                  <td>
-                    <a href="https://bitcointalk.org/index.php?topic=1574514.msg15806745#msg15806745" target="_blank">bitcointalk.org</a>
-                    <br>
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td width="50%" style="line-height:1.3; vertical-align: top;">
-              <p style="color: #000;"><b><%= I18n.t('emails.change_ticket.done_socials') %></b></p>
-              <table style="line-height:1.3" border="0">
-                <tr>
-                  <td width="30">
-                    <img
-                      src="http://files.softicons.com/download/social-media-icons/social-media-icons-by-alper-cakici/png/32x32/Vk.png"
-                      style="height:20px; width: 20px;">
-                  </td>
-                  <td><a href="https://vk.com/kassa_cc" target="_blank">vk.com</a><br></td>
-                </tr>
-                <tr>
-                  <td width="30">
-                    <img
-                      src="http://files.softicons.com/download/social-media-icons/social-media-icons-by-alper-cakici/png/32x32/Facebook.png"
-                      style="height:20px; width: 20px;">
-                  </td>
-                  <td><a href="https://facebook.com/kassacc" target="_blank">facebook.com</a><br></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-        <br>
-      </p>
-    </div>
-</div>
+<%= content_for :head_title, I18n.t('emails.order_complete.title') %>
+<tr>
+  <td style="background-color: #ffffff;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tbody><tr>
+        <td align="center" style="padding-top:36px;padding-bottom: px;text-align: center;">
+          <img src="http://kassa.alfa:3002/images/emails/success.png" alt="" width="102" height="102" style="border: 0; max-width: 102px; vertical-align: middle; width: 100%;">
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 38px 14px; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 16px; line-height: 22px; color: #000000;">
+          <h1
+            class="content-title"
+            style="margin: 0 0 37px; font-size: 36px; line-height: 49px; color: #000000; font-weight: 600; text-align: center;"
+          ><%= I18n.t('emails.order_complete.title') %></h1>
+          <p class="content-block-text" style="margin: 0; padding-left: 46px;">
+            <b><%= I18n.t('emails.order_complete.hello', nickname: @order.user.nickname ) %></b>
+            <br>
+            <br>
+            <%= I18n.t('emails.order_complete.order_complete', public_id: @order.public_id) %>
+            <br>
+            <br>
+            <%= I18n.t('emails.order_complete.thanks') %>
+          </p>
+        </td>
+      </tr>
+    </tbody></table>
+  </td>
+</tr>
+<tr>
+  <td aria-hidden="true" height="19" style="font-size: 0px; line-height: 0px;">
+    &nbsp;
+  </td>
+</tr>
+<tr>
+  <td class="content-block" style="background-color: #ffffff; padding: 56px 18px 26px 30px;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tbody><tr>
+        <td style="padding-bottom: 39px;">
+          <h2
+            style="margin: 0; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 24px; line-height: 33px; color: #000000; text-align: center;"
+          >
+            <%= I18n.t('emails.order_complete.laeve_feedback') %>
+          </h2>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 168x; line-height: 22px; letter-spacing: 0.02em; color: #000000;">
+          <p style="margin: 0 0 22px;"><%= I18n.t('emails.order_complete.laeve_feedback_please') %></p>
+        </td>
+      </tr>
+      <tr>
+        <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 16px; line-height: 22px; letter-spacing: 0.02em; color: #000000;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tbody><tr>
+              <td style="padding-bottom: 3px;font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 18px; line-height: 22px; letter-spacing: 0.02em; color: #000000; white-space: nowrap;">
+                <%= I18n.t('emails.order_complete.social_media') %>
+              </td>
+              <td style="padding-bottom: 3px; font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 18px; line-height: 22px; letter-spacing: 0.02em; color: #000000; white-space: nowrap;">
+                <%= I18n.t('emails.order_complete.sites') %>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 11px;" valign="top">
+                <a href="http://vk.com/kassa_cc" style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 16px; line-height: 22px; letter-spacing: 0.02em; color: #000000;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody><tr>
+                      <td width="55">
+                        <img src="http://kassa.alfa:3002/images/emails/vk.png" width="40" height="40" style="border: 0; max-width: 40px; vertical-align: middle; width: 100%;">
+                      </td>
+                      <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tbody><tr>
+                            <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: bold; font-size: 14px; line-height: 19px;">
+                              VKontakte</td>
+                          </tr>
+                          <tr>
+                            <td style="padding-right: 10px;font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: 300; font-size: 13px; line-height: 18px; color: #807F7F;"
+                            >
+                              <%= I18n.t('emails.order_complete.leave_feedback_vk') %>
+                            </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </a>
+              </td>
+              <td style="padding-top: 11px;" valign="top">
+                <a href="https://www.bestchange.net/kassa-exchanger.html" style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 16px; line-height: 22px; letter-spacing: 0.02em; color: #000000;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody><tr>
+                      <td width="106">
+                        <img src="http://kassa.alfa:3002/images/emails/bc.png" width="91" height="19" style="border: 0; max-width: 91px; vertical-align: middle; width: 100%;">
+                      </td>
+                      <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tbody><tr>
+                            <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: bold; font-size: 14px; line-height: 19px;">
+                              Bestchange</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: 300; font-size: 13px; line-height: 18px; color: #807F7F;">
+                              <%= I18n.t('emails.order_complete.leave_feedback_bestchange') %></td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top: 11px;" valign="top">
+                <a href="http://facebook.com/kassacc" style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 16px; line-height: 22px; letter-spacing: 0.02em; color: #000000;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody><tr>
+                      <td width="55">
+                        <img src="http://kassa.alfa:3002/images/emails/fb.png" width="40" height="40" style="border: 0; max-width: 40px; vertical-align: middle; width: 100%;">
+                      </td>
+                      <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tbody><tr>
+                            <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: bold; font-size: 14px; line-height: 19px;">
+                              Facebook</td>
+                          </tr>
+                          <tr>
+                            <td style="padding-right: 10px;font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: 300; font-size: 13px; line-height: 18px; color: #807F7F;"
+                            >
+                              <%= I18n.t('emails.order_complete.leave_feedback_facebook') %>
+                            </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </a>
+              </td>
+              <td style="padding-top: 11px;" valign="top">
+                <a href="http://mmgp.ru/showthread.php?t=458503&amp;page=1#post11133201" style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 16px; line-height: 22px; letter-spacing: 0.02em; color: #000000;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody><tr>
+                      <td width="106">
+                        <img src="http://kassa.alfa:3002/images/emails/mmgp.png" width="91" height="31" style="border: 0; max-width: 91px; vertical-align: middle; width: 100%;">
+                      </td>
+                      <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tbody><tr>
+                            <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: bold; font-size: 14px; line-height: 19px;">
+                              MMGP</td>
+                          </tr>
+                          <tr>
+                            <td style="font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: 300; font-size: 13px; line-height: 18px; color: #807F7F;"
+                            >
+                              <%= I18n.t('emails.order_complete.leave_feedback_mmgp') %>
+                            </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </a>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+  </td>
+</tr>
