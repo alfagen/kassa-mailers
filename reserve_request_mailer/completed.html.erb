@@ -31,7 +31,7 @@
       <tr>
         <td style="border-radius:8px;color:#1c1c1c;cursor:auto;padding:16px 32px;"
           align="center" valign="middle" bgcolor="#ffd828">
-          <a href="http://kassa.cc"
+          <a href="<%= "#{Settings.default_url_options[:protocol]}://#{Settings.default_url_options[:host]}" %>"
             style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:#1c1c1c;font-family:Arial, sans-serif;font-size:19px;font-weight:bold;margin:0px;"
             target="_blank"><%= I18n.t('emails.reserve_request_complete.link_text') %></a>
         </td>
