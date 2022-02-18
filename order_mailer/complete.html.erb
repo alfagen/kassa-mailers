@@ -20,7 +20,7 @@
             <%= I18n.t('emails.order_complete.order_complete', public_id: @order.public_id) %>
             <br>
             <% if @order.outcome_transaction.present? %>
-              <%= I18n.t('emails.order_complete.outcome_transaction', outcome_transaction: @order.outcome_transaction) %>
+              <%= I18n.t('emails.order_complete.outcome_transaction', link: link_to(@order.outcome_transaction, @order.outcome_transaction)) %>
             <% end %>
             <br>
             <%= I18n.t('emails.order_complete.thanks') %>
