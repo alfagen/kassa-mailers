@@ -19,7 +19,7 @@
             <br>
             <%= I18n.t('emails.order_complete.order_complete', public_id: @order.public_id) %>
             <br>
-            <%= I18n.t('emails.order_complete.outcome_transaction', link: link_to(@order.outcome_transaction, @order.outcome_transaction).html_safe) %>
+            <%= I18n.t('emails.order_complete.outcome_transaction', link: link_to(@order.outcome_transaction, @order.outcome_transaction)) %>
             <br>
             <%= I18n.t('emails.order_complete.thanks') %>
           </p>
