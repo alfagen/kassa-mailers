@@ -78,6 +78,7 @@ div[style="cursor:auto;color:#353535;font-family:'Open Sans', 'Helvetica';font-s
     tbody
       tr
         td[style="border-radius:8px;color:#1c1c1c;cursor:auto;padding:16px 32px;" align="center" valign="middle" bgcolor="#ffd828"]
-          span[style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:#1c1c1c;font-family:'Open Sans', 'Helvetica';font-size:19px;font-weight:bold;margin:0px;"]
-            = link_to I18n.t('emails.common.goto_lk'), "#{Settings.default_url_options[:protocol]}://#{Settings.default_url_options[:host]}/orders", target: "_blank", class: 'fw-700'
+          span[style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:black;font-family:'Open Sans', 'Helvetica';font-size:19px;font-weight:bold;margin:0px;"]
+            strong
+              = link_to I18n.t('emails.common.goto_lk'), "#{Settings.default_url_options[:protocol]}://#{Settings.default_url_options[:host]}/orders", target: "_blank"
   p[style="clear: both;"]
