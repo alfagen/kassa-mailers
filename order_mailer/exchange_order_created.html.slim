@@ -4,10 +4,10 @@ div[style="cursor:auto;color:#353535;font-family:'Open Sans', 'Helvetica';font-s
     br
     = I18n.t('emails.new_tickets.title').html_safe
   p[style="color: #000;"]
-    = I18n.t('emails.common.hello', nickname: @order.user.name).html_safe
-    br
-  p[style="color: #000;"]
-    = I18n.t('emails.new_tickets.title', order_id: @order.public_id)
+    | Уважаемый клиент, Ваша заявка №
+    span.fw-700
+      = @order.public_id
+    | принята!
     br
     br
     - if @order.hold?
@@ -77,5 +77,6 @@ div[style="cursor:auto;color:#353535;font-family:'Open Sans', 'Helvetica';font-s
       tr
         td[style="border-radius:8px;color:#1c1c1c;cursor:auto;padding:16px 32px;" align="center" valign="middle" bgcolor="#ffd828"]
           span[style="display:inline-block;text-decoration:none;background:#ffd828;border-radius:8px;color:#1c1c1c;font-family:'Open Sans', 'Helvetica';font-size:19px;font-weight:bold;margin:0px;"]
+            br
             = link_to I18n.t('emails.common.goto_lk'), "#{Settings.default_url_options[:protocol]}://#{Settings.default_url_options[:host]}/orders", target: "_blank"
   p[style="clear: both;"]
