@@ -27,13 +27,13 @@
         | Информация по заявке:
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.number_ticket')
         .col-5.col-lg-5
           = @order.public_id
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.direction')
         .col-5.col-lg-5
           = @order.payment_system_from.name
@@ -41,20 +41,20 @@
           = @order.payment_system_to.name
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.income_account')
         .col-5.col-lg-5
           span.account-number
             = @order.income_account
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.income_amount')
         .col-5.col-lg-5
           = @order.calculated_income_amount
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.outcome_account')
         .col-5.col-lg-5
           div
@@ -62,19 +62,19 @@
               = @order.outcome_account 
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.outcome_amount')
         .col-5.col-lg-5
           = @order.calculated_outcome_amount
       .row
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.fio')
         .col-5.col-lg-5
           = @order.outcome_fio
       .row.mb-3
         .col-7.col-lg-7
-          span.fw-500
+          span.fw-600
             = I18n.t('emails.new_tickets.create_at')
         .col-5.col-lg-5
           = @order.created_at
