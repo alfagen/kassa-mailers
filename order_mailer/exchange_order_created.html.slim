@@ -1,0 +1,84 @@
+.row
+  .col-12
+    .ax-left
+      h1
+        |  Здравствуйте, 
+      h1
+        = @order.user.name
+        | &#128075;
+      h1
+        |  Ваша заявка принята! 
+      br
+      p
+        |  Уважаемый клиент, Ваша заявка 
+        span.fw-700
+          = "№#{@order.public_id}"
+        |  принята! 
+      p
+        |  Статус Вашей заявки:
+        span.fw-700
+          | "В обработке"
+      br
+      p
+        |  Наши операторы обработают Вашу заявку в течение 20 минут. 
+.row
+  .ax-center.my-3.py-7
+    .col.rounded-lg.order-details.px-5
+      h5.fw-700.my-3
+        = I18n.t('emails.new_tickets.info_ticket')
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.number_ticket')
+        .col-5.col-lg-5
+          = @order.public_id
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.direction')
+        .col-5.col-lg-5
+          = @order.payment_system_from.name
+          |  → 
+          = @order.payment_system_to.name
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.income_account')
+        .col-5.col-lg-5
+          span.account-number
+            = @order.income_account
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.income_amount')
+        .col-5.col-lg-5
+          = @order.calculated_income_amount
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.outcome_account')
+        .col-5.col-lg-5
+          div
+            span.account-number
+              = @order.outcome_account 
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.outcome_amount')
+        .col-5.col-lg-5
+          = @order.calculated_outcome_amount
+      .row
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.fio')
+        .col-5.col-lg-5
+          = @order.outcome_fio
+      .row.mb-3
+        .col-7.col-lg-7
+          span.fw-600
+            = I18n.t('emails.new_tickets.create_at')
+        .col-5.col-lg-5
+          = @order.created_at
+  span.rounded-lg.lh-lg.fw-700.mt-4.profile-link
+    a[target="_blank" style="color: black;" href="#{Settings.default_url_options[:protocol]}://#{Settings.default_url_options[:host]}/orders"]
+      = I18n.t('emails.common.goto_lk')
