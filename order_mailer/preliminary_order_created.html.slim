@@ -16,7 +16,7 @@
         |  создана!
       p
         |  Вам необходимо оплатить заявку в течении
-        = " #{@order.income_payment_timeout} "
+        = " #{@order.income_payment_timeout.parts[:minutes]} "
         | минут. 
 .row
   .ax-center.my-3.py-7
