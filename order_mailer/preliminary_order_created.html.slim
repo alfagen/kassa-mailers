@@ -13,8 +13,7 @@
         |  Уважаемый клиент, Ваша заявка 
         span.fw-700
           = "№#{@order.public_id}"
-        |  создана! 
-      br
+        |  создана!
       p
         |  Вам необходимо оплатить заявку в течении
         = " #{@order.income_payment_timeout} "
@@ -52,7 +51,7 @@
             | Вы получите сумму:
         .col-5.col-lg-5
           = @order.calculated_outcome_amount
-      .row.mb-3
+      .row
         .col-7.col-lg-7
           span.fw-600
             | Время и дата создания:
@@ -67,7 +66,7 @@
           div
             span.account-number
               = @order.calculated_income_amount
-      .row
+      .row.mb-3
         .col-7.col-lg-7
           span.fw-600
             | На кошелек / По ссылке:
@@ -75,7 +74,7 @@
           div
             span.account-number
               - if @order.pay_invoice_url.present?
-                a[target="_blank" style="color: black;" href="#{Settings.default_url_options[:protocol]}://#{Settings.default_url_options[:host]}/orders"]
+                a.underline[target="_blank" style="color: black;" href="#{@order.pay_invoice_url}"]
                   | Оплатить
               - else
                 = @order.income_account_emoney
