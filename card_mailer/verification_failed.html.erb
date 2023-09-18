@@ -1,20 +1,13 @@
 <div style="cursor:auto;color:#000000;font-family:Arial, sans-serif;font-size:16px;line-height:1;">
-  <h1><%= I18n.t('emails.verification.title') %></h1>
+  <h2><%= I18n.t('emails.verification.title') %></h2>
+  <br/>
   <p style="color: #000;">
     <%= I18n.t('emails.verification.request', num_cart: @card_verification.card_number).html_safe %>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <%= I18n.t('emails.verification.fail') %>
   </p>
   <div style="background:#ecf0f6;display:inline-block;padding:20px 0 20px 20px;width:96%;border-radius:5px">
     <b><%= I18n.t('emails.verification.reason') %>:</b> <%= @card_verification.text %>
   </div>
-  <p style="clear: both;">
-    <br>
-    <%= I18n.t('emails.common.support').html_safe %>
-  </p>
-  <br>
-  <p style="color: #000;">
-    <%= I18n.t('emails.common.postscript').html_safe %>
-  </p>
 </div>
