@@ -1,12 +1,12 @@
 .row
   .col-12
     .ax-left
-      .fw-600
+      .fw-600.text-4xl
         |  Здравствуйте, 
-      .fw-600
+      .fw-600.text-4xl
         = @order.user.name
         | &#128075;
-      .fw-600
+      .fw-600.text-4xl
         |  Ваша заявка создана! 
       br
       p
@@ -88,9 +88,6 @@
               span.account-number
                 = @order.income_wallet.name
   - if @order.pay_invoice_url.present?
-    .row
-      .col-5
-        span.rounded-lg.lh-lg.fw-700.mt-4.profile-link
-              a[target="_blank" style="color: black;" href="#{@order.pay_invoice_url}"]
-                | Оплатить
-      .col-7
+    span.rounded-lg.lh-lg.fw-700.mt-4.profile-link
+      a[target="_blank" style="color: black;" href="#{@order.pay_invoice_url}"]
+        | Оплатить
